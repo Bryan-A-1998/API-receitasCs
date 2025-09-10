@@ -1,21 +1,38 @@
 
 using apiReceitasC_.Data;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adicionando ControllersWithViews
-builder.Services.AddControllersWithViews();
+// Configura conexão com Postgres + suporte a enums
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Configuração para registrar enums no Npgsql 8+
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseNpgsql(connectionString, o =>
+    {
+        o.MapEnum<apiReceitasC_.Enums.UnidadeMedida>("unidade_medida");
+    });
+});
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthorization();
+builder.Services.AddControllers()
+    .AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        x.JsonSerializerOptions.WriteIndented = true;
+    });
 
-//configura dbcontext com postgres
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));
+
 
 var app = builder.Build();
 
@@ -33,11 +50,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 // Mapear as rotas para o MVC
-app.MapControllerRoute(
-    name: "api",
-    pattern: "api/{controller=Home}/{action=Index}/{id?}");
-
-
+app.MapControllers();
 
 var summaries = new[]
 {
