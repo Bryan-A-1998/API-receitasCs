@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("apiReceitasC#")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ae7027c80c16e94d492ecdaf12bedc493db572b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd05f174eba34f59ea0873f45dd05b35709bf093")]
 [assembly: System.Reflection.AssemblyProductAttribute("apiReceitasC#")]
 [assembly: System.Reflection.AssemblyTitleAttribute("apiReceitasC#")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
