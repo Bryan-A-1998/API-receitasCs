@@ -1,0 +1,404 @@
+type: collection.insomnia.rest/5.0
+name: TESTES API-RECEITASC#
+meta:
+  id: wrk_d2f429403a51499abbe3b718d6f22da9
+  created: 1757433228578
+  modified: 1757433228578
+  description: ""
+collection:
+  - url: localhost:5244/api/usuario
+    name: CADASTRO USUARIO
+    meta:
+      id: req_5683bf2fcced42158aa7d364f18629f3
+      created: 1757433228602
+      modified: 1757436672625
+      isPrivate: false
+      description: ""
+      sortKey: -1757218409699
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "teste c#",
+          "email": "teste@teste.com",
+          "senha": "senha123"
+        }
+    parameters:
+      - id: pair_2e8926327f5b413783069e5f07aab4e9
+        name: ""
+        value: ""
+        description: ""
+        disabled: false
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/usuario/login
+    name: LOGIN USUARIO
+    meta:
+      id: req_1516af06a86e481095539a4ebb3b44f6
+      created: 1757433228606
+      modified: 1757440189140
+      isPrivate: false
+      description: ""
+      sortKey: -1757219343935
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "email": "bryan@teste.com",
+          "senha": "teste123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/usuario/4
+    name: ATUALIZAR USUARIO
+    meta:
+      id: req_8f6d707039ab44e3833215955fd8897d
+      created: 1757433228611
+      modified: 1757438898210
+      isPrivate: false
+      description: ""
+      sortKey: -1757219413464
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 4,
+          "nome": "teste Atualizado 2",
+        	"email": "teste@teste.com",
+          "senha": "nova123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:5244/api/usuario/4
+    name: DELETAR USUARIO
+    meta:
+      id: req_65c20741a44349e48207874dec7115bc
+      created: 1757433228615
+      modified: 1757438941883
+      isPrivate: false
+      description: ""
+      sortKey: -1757219575454
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/ingrediente
+    name: CADASTRO INGREDIENTE
+    meta:
+      id: req_04fcac04f4f345309088f2ceeb363e58
+      created: 1757433228619
+      modified: 1757448195327
+      isPrivate: false
+      description: ""
+      sortKey: -1757219695062
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome" : "letras do alfabeto"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/ingrediente
+    name: BUSCAR INGREDIENTES
+    meta:
+      id: req_939e917fc7054cc898988510f038679d
+      created: 1757433228623
+      modified: 1757450504817
+      isPrivate: false
+      description: ""
+      sortKey: -1757219697204
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/ingrediente/7
+    name: EDITAR INGREDIENTES
+    meta:
+      id: req_c150db007eb5463fbdb4f7ecf7de996d
+      created: 1757433228627
+      modified: 1757442523490
+      isPrivate: false
+      description: ""
+      sortKey: -1757219700003
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 7,
+        	"nome": "carne frango"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/ingrediente/8
+    name: DELETAR INGREDIENTE
+    meta:
+      id: req_fedc22ed1d22484d99641d5dd739f93c
+      created: 1757433228630
+      modified: 1757442548047
+      isPrivate: false
+      description: ""
+      sortKey: -1757220770085
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/receita
+    name: CADASTRO RECEITA
+    meta:
+      id: req_feb469ce501d42f8a8392b5c4e8569ef
+      created: 1757433228634
+      modified: 1757462423198
+      isPrivate: false
+      description: ""
+      sortKey: -1757220955376
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        
+        {
+          "usuarioId": 2,
+          "titulo": "Sopa de letrinha individual",
+          "descricao": "Sopa com vários letras",
+          "ingredientes": [
+            {
+              "id": 10,
+              "quantidade": 50,
+              "unidade": "un"
+            }
+          ]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/receita
+    name: BUSCAR RECEITAS (TODAS)
+    meta:
+      id: req_4ff2686e63ad49aca0e78aaa779ddc72
+      created: 1757433228637
+      modified: 1757448088317
+      isPrivate: false
+      description: ""
+      sortKey: -1757220957652
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/receita/buscar-com-ingredientes
+    name: BUSCA POR INGREDIENTES
+    meta:
+      id: req_dfb89742ddba476c947b79951e78751f
+      created: 1757433228642
+      modified: 1757465206315
+      isPrivate: false
+      description: ""
+      sortKey: -1757220960148
+    method: POST
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "ingredientes": [ 10 ]
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/receita/6
+    name: EDITAR RECEITA
+    meta:
+      id: req_23b87e6e18374a6d8bb6f7ebb948f5fb
+      created: 1757433228647
+      modified: 1757456375179
+      isPrivate: false
+      description: ""
+      sortKey: -1757221023346
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |
+        {
+        	"id": 6,
+          "titulo": "Sopa de letrinhas Atualizada2",
+          "descricao": "Receita modificada e esse é o modo de preparo...."
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/receita/6
+    name: DELETAR RECEITA
+    meta:
+      id: req_11b17fc4b2b249539c69cef0ac9c40c3
+      created: 1757433228651
+      modified: 1757456500051
+      isPrivate: false
+      description: ""
+      sortKey: -1757221035640
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:5244/api/usuario
+    name: BUSCAR USUARIOS
+    meta:
+      id: req_2f95471b1d6e45659ae02a499ed674da
+      created: 1757433228654
+      modified: 1757438065972
+      isPrivate: false
+      description: ""
+      sortKey: -1757255117908
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_50843046cf3b43aeb0ddb06b57613950
+    created: 1757433228589
+    modified: 1757433228589
+environments:
+  name: Base Environment
+  meta:
+    id: env_4efa19906054489c819a29610ae1bfdc
+    created: 1757433228582
+    modified: 1757433228582
+    isPrivate: false
