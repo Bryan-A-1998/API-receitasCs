@@ -1,0 +1,169 @@
+
+Usuários
+  Cadastrar usuário
+
+POST http://localhost:5244/api/usuario
+
+{
+  "nome": "Bryan Alex",
+  "email": "bryan@teste.com",
+  "senha": "teste123"
+}
+
+TESTE 
+
+--------------------------------------------------------
+
+  Login do usuário
+
+POST http://localhost:5244/api/usuario/login
+
+{
+  "email": "bryan@teste.com",
+  "senha": "teste123"
+}
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Buscar usuarios
+
+GET http://localhost:5244/api/usuario
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Editar usuário (NÃO PODE EDITAR O EMAIL)
+
+PUT http://localhost:5244/api/usuario/1
+
+{
+  "nome": "Bryan Atualizado",
+  "senha": "nova123"
+}
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Deletar usuário
+
+DELETE http://localhost:5244/api/usuario/1
+
+TESTE OK
+
+--------------------------------------------------------
+
+Ingredientes
+  Cadastrar ingrediente
+
+POST http://localhost:5244/api/ingrediente
+
+{
+  "nome": "Alho"
+}
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Buscar ingredientes
+
+GET http://localhost:5244/api/ingrediente
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Editar ingrediente
+
+PUT http://localhost:5244/api/ingrediente/1
+
+{
+  "nome": "Alho Triturado"
+}
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Deletar ingrediente
+
+DELETE http://localhost:5244/api/ingrediente/1
+
+TESTE OK
+
+--------------------------------------------------------
+
+Receitas
+  Cadastrar receita
+
+POST http://localhost:5244/api/receita
+
+{
+  "usuarioId": 1,
+  "titulo": "Sopa de Legumes",
+  "descricao": "Sopa com vários legumes",
+  "ingredientes": [
+    {
+      "id": 2,
+      "quantidade": 200,
+      "unidade": "g"
+    },
+    {
+      "id": 3,
+      "quantidade": 1,
+      "unidade": "un"
+    }
+  ]
+}
+
+Os IDs dos ingredientes e do usuario devem existir no banco antes de testar essa rota.
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Buscar todas as receitas
+
+GET http://localhost:5244/api/receita
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Buscar receitas compatíveis com ingredientes
+
+POST http://localhost:5244/api/receita/buscar-com-ingredientes
+
+{
+  "ingredientes": [2, 3]
+}
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Editar receita
+
+PUT http://localhost:5244/api/receita/1
+
+{
+  "id": 1,
+  "titulo": "Sopa de Legumes Atualizada",
+  "descricao": "Receita modificada"
+}
+
+TESTE OK
+
+--------------------------------------------------------
+
+  Deletar receita
+
+DELETE http://localhost:5244/api/receita/1
+
+TESTE OK
+
+--------------------------------------------------------
